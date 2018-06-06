@@ -1,0 +1,17 @@
+---
+ - hosts: "{{ hostGroup }}"
+   strategy: debug
+   user: gamesroot
+   become_user: root
+   gather_facts: yes
+   vars:
+       UserInput: "{{filepath}}"
+ 
+ 
+ 
+   tasks:
+#   - file:
+#   #      path: "{{UserInput}}"
+#   #      state: absent
+   - command: sudo rm -f "{{UserInput}}"
+ 
